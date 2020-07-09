@@ -170,5 +170,5 @@ pcawg_maf['Ref'], pcawg_maf['Alt'], pcawg_maf['five_p'], pcawg_maf['three_p'] = 
 pcawg_maf.drop(columns=['index'], inplace=True)
 
 pickle.dump(pcawg_maf, open(file_path / 'pcawg_maf_table.pkl', 'wb'), protocol=4)
-pickle.dump(panel_df, open(file_path / 'pcawg_panel_table.pkl', 'wb'))
+pickle.dump(panel_df, open(file_path / 'pcawg_panel_table.pkl', 'wb')) ##should be same as tcga_panel_table
 

@@ -331,5 +331,5 @@ tcga_maf['Ref'], tcga_maf['Alt'], tcga_maf['five_p'], tcga_maf['three_p'] = vari
 tcga_maf.drop(columns=['index'], inplace=True)
 
 pickle.dump(tcga_maf, open(file_path / 'tcga_maf_table_controlled.pkl', 'wb'), protocol=4)
-pickle.dump(panel_df, open(file_path / 'tcga_panel_table_controlled.pkl', 'wb'))
+pickle.dump(panel_df, open(file_path / 'tcga_panel_table_controlled.pkl', 'wb')) ##should be same as tcga_panel_table
 
