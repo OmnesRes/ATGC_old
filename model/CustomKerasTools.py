@@ -118,7 +118,7 @@ class BatchGenerator:
             self.x_sample_instance_idx = self.x_instance_sample_idx[:, np.newaxis]
         else:
             self.x_instance_sample_idx = x_instance_sample_idx
-            self.x_sample_instance_idx = np.array([np.where(x_instance_sample_idx == i)[0] for i in range(y_label.shape[0])])
+            self.x_sample_instance_idx = np.array([np.where(x_instance_sample_idx == i)[0] for i in range(y_label.shape[0])], dtype=object)
 
         # set no stratification (ie all zeros) if y_stratification is None
         if y_stratification is None:
