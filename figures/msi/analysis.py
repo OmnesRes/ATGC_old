@@ -72,7 +72,7 @@ predictions = []
 test_idx = []
 msipred_predictions = []
 ##stratified K fold for test
-for run, (idx_train, idx_test) in enumerate(StratifiedKFold(n_splits=9, random_state=0).split(y_strat, y_strat)):
+for run, (idx_train, idx_test) in enumerate(StratifiedKFold(n_splits=9, random_state=0, shuffle=True).split(y_strat, y_strat)):
     idx_train, idx_valid = [idx_train[idx] for idx in list(StratifiedShuffleSplit(n_splits=1, test_size=300, random_state=0).split(np.zeros_like(y_strat)[idx_train], y_strat[idx_train]))[0]]
 
     data_test = next(BatchGenerator(x_instance_sample_idx=D['sample_idx'], x_instance_features=features, x_sample=sample_features,
