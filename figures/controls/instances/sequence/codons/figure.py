@@ -48,7 +48,7 @@ right=0.927,
 hspace=0.088,
 wspace=0.0)
 myblue = make_colormap({0: '#ffffff', 1: '#4169E1'})
-figure_matrix = ax2.imshow(matrix / matrix.sum(axis=-1), cmap=myblue, vmin=0, vmax=1)
+figure_matrix = ax2.imshow(matrix / matrix.sum(axis=-1, keepdims=True), cmap=myblue, vmin=0, vmax=1)
 ax2.tick_params(width=0, labelsize=10, pad=0)
 [s.set_visible(False) for s in ax2.spines.values()]
 ax2.set_xticks(list(range(len(labels))))
@@ -70,7 +70,7 @@ ax1.spines['left'].set_linewidth(.5)
 ax1.spines['left'].set_position(['outward', -10])
 ax1.spines['left'].set_bounds(0, 1)
 ax1.spines['bottom'].set_visible(False)
-ax4.barh(list(range(matrix.shape[0])), np.diag(matrix / matrix.sum(axis=1)), height=1, align='edge', edgecolor='k', linewidth=.5)
+ax4.barh(list(range(matrix.shape[0])), np.diag(matrix / matrix.sum(axis=1))[::-1], height=1, align='edge', edgecolor='k', linewidth=.5)
 ax4.set_ylim(0, matrix.shape[0])
 ax4.set_xticks([0, 1])
 ax4.set_yticks([])
