@@ -1,4 +1,6 @@
 # Aggregation Tool for Genomic Concepts (ATGC)
+This code base is deprecated, the current repository is available at https://github.com/OmnesRes/ATGC
+
 ATGC is a deep learning model for featurizing instance level data and performing classification or regression tasks at the sample level with multiple instance learning.  For example, the model could be used to classify tumor type based on features extracted from instances such as somatic mutations.  In addition to instance features, the model also allows for sample features to be included.  Built with Python 3 and TensorFlow 2 and tf.keras, the scripts have been tested on TF 2.1, and 2.2.
 
 The fastest way to get started would be to create some simulated data with https://github.com/OmnesRes/ATGC/blob/master/figures/controls/samples/sim_data.py, and then run a classification task on that data with https://github.com/OmnesRes/ATGC/blob/master/figures/controls/samples/sim_run.py.
